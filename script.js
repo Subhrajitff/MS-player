@@ -40,12 +40,12 @@ const makeAllPlays = ()=>{
 const autoplay = ()=>{
     
     makeAllPlays();
-if(songIndex<=0){
-    songIndex = 0
-}
-else{
-    songIndex -= 1;
-}
+  if(songIndex>=9){
+        songIndex = 0
+    }
+    else{
+        songIndex += 1;
+    }
 audioElement.src = `songs/${songIndex+1}.mp3`;
 masterSongName.innerText = songs[songIndex].songName;
 audioElement.currentTime = 0;
